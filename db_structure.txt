@@ -1,0 +1,71 @@
+appUsers Table :
+
+1. id -> id
+2. name -> string
+3. email -> string(unique)
+4. password -> stirng
+5. theme -> Enum(Light/Dark)
+6. language -> Enum(Eng)
+7. mobileNumber -> string(unique)
+8. location -> string
+
+project Table :
+
+1. projectId -> id(unique)
+2. projectName -> String (unique)
+3. projectOrigin -> Enum (Shared/Original)
+4. projectForms -> Array of Object
+{
+	"formId",
+	"formName" 
+}
+5. 
+
+
+form Table :
+
+1. formId -> id(unique)
+2. formName -> String (a project can't have 2 forms with same name)
+3. formOrigin -> ENUM (Shared/Original)
+4. formStatus -> ENUM (deaft/complete)
+5. formPages -> Array of Object
+{
+	"pageId",
+	"pageName"
+}
+6. projectId -> Id : from project table (or can be null as well) = this implies, the following form is in this table
+
+page Tabel :
+
+1. pageId -> id(unique)
+2. pageNumber -> integer
+3. pageName -> String
+4. nextPage -> integer (is null, if it's the final page in a form)
+5. pageSections -> Array of Object
+{
+	"sectionNumber",
+	"sectionId"
+}
+6. formId -> id : from form table (cannot be null) = this implies, the following page is in this form
+7. backGroundColour -> string
+
+section table :
+
+1. sectionId -> id(unique)
+2. sectionNumber -> integer
+3. sectionQuestions -> Array of Object
+{
+	"questionId",
+	"questionNumber"
+}
+4. pageId -> id : from page table (cannot be null) = this implies, the following section is in this page
+5. sectionBgColour -> string
+
+
+question table :
+
+1. questionId -> id(unique)
+2. questionName -> string
+3. sectionId -> id : from section table (cannot be null) = this implies, the following question is in this section
+4. pageId -> id : from page table (cannot be null) = this implies, the following question is in this page
+5. questionType -> Enum (ShortAnswer/LongAnswer/CheckBox/MultiChoice/DateSelect/RatingSelect/FileUpload/LinearScale)

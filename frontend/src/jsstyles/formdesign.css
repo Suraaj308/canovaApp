@@ -1,0 +1,58 @@
+.page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.right-container {
+  width: 85%;
+  height: 100%;
+}
+
+.title-container {
+  display: flex;
+  width: 100%;
+  height: 12%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefdfd;
+}
+
+.title-text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.title-input {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.body-container {
+  display: flex;
+  width: 100%;
+  height: 88%;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+
+.preview-button {
+  background-color: #e7eef5;
+  color: black;
+}
+
+.save-button {
+  background-color: black;
+  color: white;
+}
+
+

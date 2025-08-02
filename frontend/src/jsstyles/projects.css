@@ -1,0 +1,39 @@
+.projectspage-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projectspage-container .right-container {
+  width: 85%;
+  height: 100%;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.projectspage-container .title-container {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  border-bottom: 0.1rem solid black;
+}
+
+.projectspage-container .title-text {
+  font-size: 2rem;
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.projectspage-container .body-container {
+  display: flex;
+  margin: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
