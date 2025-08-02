@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-    origin: `${FRONTEND_LINK}`,
+    origin: `${process.env.FRONTEND_LINK}`,
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
     allowedHeaders: ['Content-Type'], // Allow specific headers
 }));
@@ -20,7 +20,7 @@ connectDB();
 app.use(express.json()); // Parse JSON bodies
 
 // Routes
-app.use('/auth', loginAuthRoutes,homeAuthRoutes);
+app.use('/auth', loginAuthRoutes, homeAuthRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
