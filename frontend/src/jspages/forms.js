@@ -15,7 +15,7 @@ function Forms() {
         const fetchProjectsAndForms = async () => {
             try {
                 const emailId = JSON.parse(localStorage.getItem('user')).email
-                const response = await fetch('http://localhost:5000/auth/getprojectandformdata', {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/getprojectandformdata`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

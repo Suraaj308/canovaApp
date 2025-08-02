@@ -24,7 +24,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/login', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -50,7 +50,7 @@ function Login() {
             return;
         }
         try {
-            const response = await fetch('http://localhost:5000/auth/signup', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: username, email, password })
@@ -71,7 +71,7 @@ function Login() {
     const handleForgotPassword = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/forgotpassword', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/forgotpassword`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
@@ -91,7 +91,7 @@ function Login() {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/verifyotp', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/verifyotp`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otpvalue: otp })
@@ -115,7 +115,7 @@ function Login() {
             return;
         }
         try {
-            const response = await fetch('http://localhost:5000/auth/resetpassword', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_LINK}/auth/resetpassword`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otpvalue: otp, newpassword: password })
